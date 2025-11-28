@@ -1,65 +1,123 @@
-import Image from "next/image";
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
+import { ContentBlock } from '@/components/content/ContentBlock';
+import { Heading } from '@/components/content/Heading';
+import Link from 'next/link';
+import scrapedData from '@/data/scraped-data.json';
 
 export default function Home() {
+  // Get homepage data
+  const homepage = scrapedData.pages.find(
+    (page: any) => page.url === 'https://www.leamatyi.com/' || page.url === 'https://www.leamatyi.com'
+  );
+
+  const headings = homepage?.headings || [];
+  const mainHeading = headings.find((h: any) => h.level === 1);
+  const subHeadings = headings.filter((h: any) => h.level === 3).slice(0, 4);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <Header />
+      <main className="min-h-screen bg-[#A8D5E2]">
+        {/* Modern Hero Section */}
+        <section className="relative py-16 md:py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Side - Text Content */}
+              <div className="space-y-8">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-[#2C5F7F] leading-tight">
+                  ONLINE A OFFLINE<br />PMU KURZY
+                </h1>
+                
+                <div className="space-y-4 text-gray-700">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#2C5F7F] rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-lg">15 rokov mojej praxe v edukačných videách, workbookoch a demo ukážkach</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#2C5F7F] rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-lg">neobmedzený prístup ku videám</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#2C5F7F] rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-lg">PMU komunita, ktorá sa radí a pomáha si</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-[#2C5F7F] rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-lg">pre všetkých artistov, ktorí hľadajú najkvalitnejšie kurzy</p>
+                  </div>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <Button size="lg" className="bg-[#2C5F7F] text-white hover:bg-[#1f4456] text-lg px-8 py-6 rounded-full shadow-lg">
+                    ZAČAŤ HNEĎ
+                  </Button>
+                </div>
+              </div>
+              
+              {/* Right Side - Image */}
+              <div className="relative">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white">
+                  <div className="aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                    <p className="text-gray-400 text-sm">Hero Image Placeholder</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Lea's Training */}
+        <section className="py-24 bg-white">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#2C5F7F] mb-4">
+                PREČO SI VYBRAŤ LEA MATYI?
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {subHeadings.map((heading: any, index: number) => (
+                <Card key={index} className="p-8 hover:shadow-xl transition-all border-2 border-[#D4E9F2] hover:border-[#2C5F7F] bg-white">
+                  <h3 className="text-xl font-heading font-bold text-[#2C5F7F]">
+                    {heading.text}
+                  </h3>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Content Section */}
+        {homepage?.paragraphs && homepage.paragraphs.length > 0 && (
+          <section className="py-24 bg-[#F5F5F5]">
+            <div className="mx-auto max-w-4xl px-6 lg:px-8">
+              <ContentBlock 
+                paragraphs={homepage.paragraphs.slice(0, 3)} 
+                lists={homepage.lists}
+              />
+            </div>
+          </section>
+        )}
+
+        {/* CTA Section */}
+        <section className="py-24 bg-[#2C5F7F] text-white">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+              Pridajte sa k 1 000+ PMU profesionálom
+            </h2>
+            <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+              Získajte VIP prístup k našim najlepším kurzom a exkluzívnym ponukám.
+            </p>
+            <Button size="lg" className="text-lg px-8 py-6 bg-white text-[#2C5F7F] hover:bg-gray-100 rounded-full shadow-lg">
+              PRIHLÁS SA TERAZ
+            </Button>
+          </div>
+        </section>
       </main>
-    </div>
+      <Footer />
+    </>
   );
 }
