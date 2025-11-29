@@ -4,35 +4,35 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* Sky Blue Brand Color Palette */
-  --color-sky-blue: rgb(171 219 227);
-  --color-dark-blue: rgb(44 95 127);
-  --color-accent-blue: rgb(31 68 86);
+  /* Luxury Color Palette */
+  --color-espresso: rgb(43 24 16);
+  --color-taupe: rgb(139 115 85);
   --color-cream: rgb(245 237 224);
   --color-ivory: rgb(255 254 249);
-  --color-light-gray: rgb(245 245 245);
+  --color-bronze: rgb(184 125 75);
+  --color-gold: rgb(212 175 55);
   --color-charcoal: rgb(26 26 26);
-  --color-soft-blue: rgb(212 233 242);
+  --color-soft-pink: rgb(244 228 218);
   
   /* Semantic Colors */
   --color-background: var(--color-ivory);
   --color-foreground: var(--color-charcoal);
-  --color-card: rgb(171 219 227 / 0.2);
-  --color-card-foreground: var(--color-dark-blue);
+  --color-card: var(--color-cream);
+  --color-card-foreground: var(--color-charcoal);
   --color-popover: var(--color-ivory);
   --color-popover-foreground: var(--color-charcoal);
-  --color-primary: var(--color-dark-blue);
+  --color-primary: var(--color-bronze);
   --color-primary-foreground: var(--color-ivory);
-  --color-secondary: var(--color-sky-blue);
-  --color-secondary-foreground: var(--color-dark-blue);
-  --color-muted: var(--color-soft-blue);
-  --color-muted-foreground: var(--color-dark-blue);
-  --color-accent: var(--color-sky-blue);
-  --color-accent-foreground: var(--color-dark-blue);
+  --color-secondary: var(--color-taupe);
+  --color-secondary-foreground: var(--color-ivory);
+  --color-muted: var(--color-soft-pink);
+  --color-muted-foreground: var(--color-taupe);
+  --color-accent: var(--color-gold);
+  --color-accent-foreground: var(--color-espresso);
   --color-destructive: oklch(0.577 0.245 27.325);
-  --color-border: var(--color-sky-blue);
-  --color-input: var(--color-soft-blue);
-  --color-ring: var(--color-dark-blue);
+  --color-border: var(--color-taupe);
+  --color-input: var(--color-cream);
+  --color-ring: var(--color-bronze);
   
   /* Typography */
   --font-sans: var(--font-geist);
@@ -56,44 +56,43 @@
   /* ===========================
      🎨 LUXURY DESIGN SYSTEM
      "Silent Luxury Meets Editorial Precision"
-     Nebesky modrá brand farba
      =========================== */
   
-  /* Primary Palette: Sky Blue & Professional */
-  --sky-blue: 171 219 227;    /* #abdbe3 - Nebesky modrá */
-  --dark-blue: 44 95 127;     /* #2C5F7F - Tmavá modrá */
+  /* Primary Palette: Skin & Earth */
+  --espresso: 43 24 16;       /* #2B1810 - Deep brown, grounding */
+  --taupe: 139 115 85;        /* #8B7355 - Warm neutral */
   --cream: 245 237 224;       /* #F5EDE0 - Soft background */
   --ivory: 255 254 249;       /* #FFFEF9 - Pure canvas */
   
-  /* Accent Colors: Professional Highlights */
-  --accent-blue: 31 68 86;    /* #1f4456 - Hover state */
-  --light-gray: 245 245 245;  /* #F5F5F5 - Light background */
+  /* Accent Colors: Luxury Highlights */
+  --bronze: 184 125 75;       /* #B87D4B - Luxury highlight */
+  --gold: 212 175 55;         /* #D4AF37 - Premium touch */
   --charcoal: 26 26 26;       /* #1A1A1A - Typography */
-  --soft-blue: 212 233 242;   /* #D4E9F2 - Subtle warmth */
+  --soft-pink: 244 228 218;   /* #F4E4DA - Subtle warmth */
   
   /* Semantic Mapping for Shadcn UI */
   --background: var(--ivory);
   --foreground: var(--charcoal);
-  --card: rgb(var(--sky-blue) / 0.2);
-  --card-foreground: var(--dark-blue);
+  --card: var(--cream);
+  --card-foreground: var(--charcoal);
   --popover: var(--ivory);
   --popover-foreground: var(--charcoal);
-  --primary: var(--dark-blue);
+  --primary: var(--bronze);
   --primary-foreground: var(--ivory);
-  --secondary: var(--sky-blue);
-  --secondary-foreground: var(--dark-blue);
-  --muted: var(--soft-blue);
-  --muted-foreground: var(--dark-blue);
-  --accent: var(--sky-blue);
-  --accent-foreground: var(--dark-blue);
+  --secondary: var(--taupe);
+  --secondary-foreground: var(--ivory);
+  --muted: var(--soft-pink);
+  --muted-foreground: var(--taupe);
+  --accent: var(--gold);
+  --accent-foreground: var(--espresso);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: var(--sky-blue);
-  --input: var(--soft-blue);
-  --ring: var(--dark-blue);
+  --border: var(--taupe);
+  --input: var(--cream);
+  --ring: var(--bronze);
   
   /* Gradients */
-  --hero-gradient: linear-gradient(135deg, rgb(var(--dark-blue)) 0%, rgba(var(--dark-blue), 0.7) 100%);
-  --card-shimmer: linear-gradient(90deg, transparent, rgba(var(--sky-blue), 0.2), transparent);
+  --hero-gradient: linear-gradient(135deg, rgb(var(--espresso)) 0%, rgba(var(--espresso), 0.7) 100%);
+  --card-shimmer: linear-gradient(90deg, transparent, rgba(var(--gold), 0.1), transparent);
   
   /* Typography Variables */
   --font-sans: var(--font-geist-sans);
@@ -246,11 +245,11 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: rgb(var(--dark-blue));
+    background: rgb(var(--bronze));
     border-radius: 4px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(var(--accent-blue));
+    background: rgb(var(--gold));
   }
 }

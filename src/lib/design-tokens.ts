@@ -6,17 +6,17 @@
  */
 
 export const colors = {
-  // Primary Palette: Sky Blue Brand
-  skyBlue: '#abdbe3',
-  darkBlue: '#2C5F7F',
-  accentBlue: '#1f4456',
+  // Primary Palette: Skin & Earth
+  espresso: '#2B1810',
+  taupe: '#8B7355',
   cream: '#F5EDE0',
   ivory: '#FFFEF9',
   
-  // Supporting Colors
-  lightGray: '#F5F5F5',
-  softBlue: '#D4E9F2',
+  // Accent Colors: Luxury Highlights
+  bronze: '#B87D4B',
+  gold: '#D4AF37',
   charcoal: '#1A1A1A',
+  softPink: '#F4E4DA',
   
   // Functional
   white: '#FFFFFF',
@@ -100,13 +100,13 @@ export const spacing = {
 export const effects = {
   // Shadows
   shadow: {
-    sm: '0 1px 2px 0 rgba(44, 95, 127, 0.05)',
-    md: '0 4px 6px -1px rgba(44, 95, 127, 0.1), 0 2px 4px -1px rgba(44, 95, 127, 0.06)',
-    lg: '0 10px 15px -3px rgba(44, 95, 127, 0.1), 0 4px 6px -2px rgba(44, 95, 127, 0.05)',
-    xl: '0 20px 25px -5px rgba(44, 95, 127, 0.1), 0 10px 10px -5px rgba(44, 95, 127, 0.04)',
-    '2xl': '0 25px 50px -12px rgba(44, 95, 127, 0.25)',
-    skyBlue: '0 10px 30px -5px rgba(171, 219, 227, 0.3)',
-    darkBlue: '0 10px 30px -5px rgba(44, 95, 127, 0.4)',
+    sm: '0 1px 2px 0 rgba(43, 24, 16, 0.05)',
+    md: '0 4px 6px -1px rgba(43, 24, 16, 0.1), 0 2px 4px -1px rgba(43, 24, 16, 0.06)',
+    lg: '0 10px 15px -3px rgba(43, 24, 16, 0.1), 0 4px 6px -2px rgba(43, 24, 16, 0.05)',
+    xl: '0 20px 25px -5px rgba(43, 24, 16, 0.1), 0 10px 10px -5px rgba(43, 24, 16, 0.04)',
+    '2xl': '0 25px 50px -12px rgba(43, 24, 16, 0.25)',
+    bronze: '0 10px 30px -5px rgba(184, 125, 75, 0.3)',
+    gold: '0 10px 30px -5px rgba(212, 175, 55, 0.3)',
   },
   
   // Blur
@@ -127,12 +127,12 @@ export const effects = {
 } as const;
 
 export const gradients = {
-  hero: `linear-gradient(135deg, ${colors.darkBlue} 0%, rgba(44, 95, 127, 0.7) 100%)`,
-  heroVertical: `linear-gradient(180deg, ${colors.darkBlue} 0%, rgba(44, 95, 127, 0.4) 60%, transparent 100%)`,
-  card: `linear-gradient(135deg, ${colors.cream} 0%, ${colors.softBlue} 100%)`,
-  shimmer: `linear-gradient(90deg, transparent, rgba(171, 219, 227, 0.2), transparent)`,
-  overlay: `linear-gradient(to top, ${colors.darkBlue}F0 0%, ${colors.darkBlue}60 50%, transparent 100%)`,
-  skyBlue: `linear-gradient(135deg, ${colors.skyBlue} 0%, ${colors.softBlue} 100%)`,
+  hero: `linear-gradient(135deg, ${colors.espresso} 0%, rgba(43, 24, 16, 0.7) 100%)`,
+  heroVertical: `linear-gradient(180deg, ${colors.espresso} 0%, rgba(43, 24, 16, 0.4) 60%, transparent 100%)`,
+  card: `linear-gradient(135deg, ${colors.cream} 0%, ${colors.softPink} 100%)`,
+  shimmer: `linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent)`,
+  overlay: `linear-gradient(to top, ${colors.espresso}F0 0%, ${colors.espresso}60 50%, transparent 100%)`,
+  bronze: `linear-gradient(135deg, ${colors.bronze} 0%, ${colors.gold} 100%)`,
 } as const;
 
 export const breakpoints = {

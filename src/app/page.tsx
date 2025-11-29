@@ -173,10 +173,10 @@ export default function Home() {
               variants={textReveal}
               className="mx-auto max-w-3xl text-center mb-20"
             >
-              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-dark-blue mb-6">
+              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-espresso mb-6">
                 Prečo Lea Matyi?
               </h2>
-              <p className="text-charcoal/80 text-lg leading-relaxed">
+              <p className="text-taupe text-lg leading-relaxed">
                 15 rokov praxe destilované do najkvalitnejšieho PMU vzdelávania v Európe
               </p>
             </motion.div>
@@ -214,10 +214,10 @@ export default function Home() {
                 >
                   <PremiumCard className="p-8 h-full text-center">
                     <div className="text-5xl mb-4">{feature.icon}</div>
-                    <h3 className="font-heading text-xl font-semibold text-dark-blue mb-3">
+                    <h3 className="font-heading text-xl font-semibold text-espresso mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-charcoal/80 text-sm leading-relaxed">
+                    <p className="text-taupe text-sm leading-relaxed">
                       {feature.description}
                     </p>
                   </PremiumCard>
@@ -237,10 +237,10 @@ export default function Home() {
               variants={textReveal}
               className="mx-auto max-w-3xl text-center mb-20"
             >
-              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-dark-blue mb-6">
+              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-espresso mb-6">
                 Naše Kurzy
               </h2>
-              <p className="text-charcoal/80 text-lg leading-relaxed">
+              <p className="text-taupe text-lg leading-relaxed">
                 Od začiatočníkov po expertov — každý kurz je navrhnutý pre dokonalé výsledky
               </p>
             </motion.div>
@@ -259,10 +259,10 @@ export default function Home() {
               variants={textReveal}
               className="mx-auto max-w-3xl text-center mb-12"
             >
-              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-dark-blue mb-6">
+              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-espresso mb-6">
                 Portfólio Excelentnosti
               </h2>
-              <p className="text-charcoal/80 text-lg leading-relaxed">
+              <p className="text-taupe text-lg leading-relaxed">
                 Výsledky, ktoré hovoria samy za seba
               </p>
             </motion.div>
@@ -284,10 +284,10 @@ export default function Home() {
               variants={textReveal}
               className="mx-auto max-w-3xl text-center mb-20"
             >
-              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-dark-blue mb-6">
+              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-espresso mb-6">
                 Úspešné Príbehy
               </h2>
-              <p className="text-charcoal/80 text-lg leading-relaxed">
+              <p className="text-taupe text-lg leading-relaxed">
                 Tisíce umelcov transformovali svoju kariéru s našimi kurzami
               </p>
             </motion.div>
@@ -329,17 +329,17 @@ export default function Home() {
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
-                        className="w-20 h-20 rounded-full object-cover mx-auto ring-4 ring-sky-blue/30"
+                        className="w-20 h-20 rounded-full object-cover mx-auto ring-4 ring-bronze/30"
                       />
                     </div>
                     <p className="text-charcoal italic mb-6 leading-relaxed">
                       "{testimonial.quote}"
                     </p>
                     <div className="text-center">
-                      <p className="font-heading font-semibold text-dark-blue text-lg">
+                      <p className="font-heading font-semibold text-espresso text-lg">
                         {testimonial.name}
                       </p>
-                      <p className="text-sm text-charcoal/70">{testimonial.role}</p>
+                      <p className="text-sm text-taupe">{testimonial.role}</p>
                     </div>
                   </PremiumCard>
                 </motion.div>
@@ -351,8 +351,8 @@ export default function Home() {
         {/* Final CTA Section */}
         <section className="relative py-32 overflow-hidden">
           {/* Background with overlay */}
-          <div className="absolute inset-0 bg-dark-blue" />
-          <div className="absolute inset-0 bg-gradient-to-br from-dark-blue via-dark-blue/95 to-sky-blue/20" />
+          <div className="absolute inset-0 bg-espresso" />
+          <div className="absolute inset-0 bg-gradient-to-br from-espresso via-espresso/95 to-bronze/20" />
 
           <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8 text-center">
             <motion.div
@@ -381,7 +381,7 @@ export default function Home() {
               {/* Trust Badges */}
               <div className="mt-16 flex flex-wrap justify-center gap-8 text-cream/70 text-sm">
                 <div className="flex items-center gap-2">
-                  <span className="text-sky-blue">★★★★★</span>
+                  <span className="text-gold">★★★★★</span>
                   <span>4.9/5 Rating</span>
                 </div>
                 <div>5,000+ Študentov</div>

@@ -70,7 +70,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
       </div>
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-blue/80 via-dark-blue/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-espresso/80 via-espresso/40 to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 flex h-full items-center justify-center text-center px-6">
@@ -87,7 +87,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
                 {i > 0 && <br />}
                 {line.includes('<span>') ? (
                   <span
-                    className="italic text-sky-blue"
+                    className="italic text-bronze"
                     dangerouslySetInnerHTML={{
                       __html: line.replace('<span>', '').replace('</span>', ''),
                     }}
@@ -105,7 +105,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-[clamp(1.25rem,2.5vw,1.75rem)] font-heading text-sky-blue mb-6"
+              className="text-[clamp(1.25rem,2.5vw,1.75rem)] font-heading text-bronze mb-6"
             >
               {subtitle}
             </motion.p>
@@ -133,7 +133,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
               variant="primary"
               size="lg"
               onClick={onCtaClick}
-              className="shadow-2xl hover:shadow-sky-blue/50"
+              className="shadow-2xl hover:shadow-bronze/50"
             >
               {ctaText}
             </MagneticButton>
@@ -157,7 +157,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
               repeat: Infinity,
               ease: 'easeInOut',
             }}
-            className="w-1 h-3 bg-sky-blue rounded-full"
+            className="w-1 h-3 bg-bronze rounded-full"
           />
         </div>
         <p className="text-cream/50 text-xs mt-3 tracking-widest">SCROLL</p>

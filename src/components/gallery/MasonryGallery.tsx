@@ -105,7 +105,7 @@ export const MasonryGallery: React.FC<MasonryGalleryProps> = ({
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
-                className="absolute inset-0 bg-gradient-to-t from-dark-blue/90 via-dark-blue/50 to-transparent flex items-end p-6"
+                className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/50 to-transparent flex items-end p-6"
               >
                 <div>
                   {image.title && (
