@@ -289,3 +289,4 @@ export const parallaxConfig = { ... }
 **Let's build something legendary.** 💎
 
 
+

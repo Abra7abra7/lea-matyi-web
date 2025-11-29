@@ -268,3 +268,4 @@ Pre otázky alebo ďalší vývoj:
 **Status:** ✅ **PRODUCTION READY**
 
 
+
