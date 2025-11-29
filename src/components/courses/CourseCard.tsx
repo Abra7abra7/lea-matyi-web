@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Check } from 'lucide-react';
-import { MagneticButton } from '@/components/ui/magnetic-button';
+import { Button } from '@/components/ui/button-simple';
 import { cardHover, imageZoom } from '@/lib/animations';
 import { cn } from '@/lib/utils';
 
@@ -114,14 +114,14 @@ export const CourseCard: React.FC<CourseCardProps> = ({
         </ul>
 
         {/* CTA Button */}
-        <MagneticButton
+        <Button
           variant="primary"
           size="md"
           onClick={() => onEnroll?.(course)}
           className="w-full mb-4"
         >
           ENROLL NOW — €{course.price}
-        </MagneticButton>
+        </Button>
 
         {/* Trust Signals */}
         <div className="flex items-center justify-center gap-4 text-xs text-taupe">
