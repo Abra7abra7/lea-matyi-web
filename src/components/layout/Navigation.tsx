@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { useScrollProgress } from '@/lib/hooks/useScrollProgress';
-import { MagneticButton } from '@/components/ui/magnetic-button';
+import { Button } from '@/components/ui/button-simple';
 import { navSlideDown, mobileMenuSlide, menuItemStagger, menuItem } from '@/lib/animations';
 import { cn } from '@/lib/utils';
 
@@ -99,13 +99,13 @@ export const Navigation: React.FC<NavigationProps> = ({
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <MagneticButton
+            <Button
               variant={isScrolled ? 'primary' : 'ghost'}
               size="sm"
               onClick={onCtaClick}
             >
               {ctaText}
-            </MagneticButton>
+            </Button>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -165,7 +165,7 @@ export const Navigation: React.FC<NavigationProps> = ({
 
               {/* CTA */}
               <motion.div variants={menuItem} className="mt-12">
-                <MagneticButton
+                <Button
                   variant="primary"
                   size="lg"
                   onClick={() => {
@@ -174,7 +174,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                   }}
                 >
                   {ctaText}
-                </MagneticButton>
+                </Button>
               </motion.div>
             </motion.div>
           </motion.div>
