@@ -46,10 +46,10 @@ export const MagneticButton = forwardRef<HTMLButtonElement, MagneticButtonProps>
 
     // Variant styles
     const variantStyles = {
-      primary: 'bg-bronze text-ivory hover:bg-espresso shadow-lg hover:shadow-bronze',
-      secondary: 'bg-taupe text-ivory hover:bg-espresso',
-      ghost: 'border-2 border-bronze text-bronze hover:bg-bronze hover:text-ivory',
-      link: 'text-bronze underline-offset-4 hover:underline',
+      primary: 'bg-dark-blue text-ivory hover:bg-accent-blue shadow-lg hover:shadow-dark-blue',
+      secondary: 'bg-sky-blue text-dark-blue hover:bg-accent-blue hover:text-ivory',
+      ghost: 'border-2 border-dark-blue text-dark-blue hover:bg-dark-blue hover:text-ivory',
+      link: 'text-dark-blue underline-offset-4 hover:underline',
     };
 
     // Size styles
@@ -89,7 +89,7 @@ export const MagneticButton = forwardRef<HTMLButtonElement, MagneticButtonProps>
           // Base styles
           'inline-flex items-center justify-center rounded-full font-medium',
           'transition-all duration-300 ease-out',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bronze focus-visible:ring-offset-2',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark-blue focus-visible:ring-offset-2',
           'disabled:pointer-events-none disabled:opacity-50',
           // Variant & Size
           variantStyles[variant],

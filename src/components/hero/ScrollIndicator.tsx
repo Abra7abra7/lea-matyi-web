@@ -30,7 +30,7 @@ export const ScrollIndicator: React.FC<ScrollIndicatorProps> = ({ className }) =
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="w-1 h-3 bg-bronze rounded-full"
+          className="w-1 h-3 bg-sky-blue rounded-full"
         />
       </div>
       <p className="text-cream/50 text-xs tracking-widest">SCROLL</p>

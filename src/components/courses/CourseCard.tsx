@@ -61,7 +61,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
     >
       {/* Featured Badge */}
       {course.isFeatured && (
-        <div className="absolute top-4 right-4 z-10 bg-gold text-espresso text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+        <div className="absolute top-4 right-4 z-10 bg-sky-blue text-dark-blue text-xs font-bold px-3 py-1 rounded-full shadow-lg">
           BESTSELLER
         </div>
       )}
@@ -78,25 +78,25 @@ export const CourseCard: React.FC<CourseCardProps> = ({
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-espresso/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-blue/60 to-transparent" />
       </motion.div>
 
       {/* Content */}
       <div className="p-8">
         {/* Meta Info */}
-        <div className="flex items-center gap-2 text-bronze text-sm font-mono mb-3">
+        <div className="flex items-center gap-2 text-dark-blue text-sm font-mono mb-3">
           <span>{course.duration}</span>
           <span>•</span>
           <span>{course.level}</span>
         </div>
 
         {/* Title */}
-        <h3 className="font-heading text-2xl text-espresso mb-4 leading-tight">
+        <h3 className="font-heading text-2xl text-dark-blue mb-4 leading-tight">
           {course.title}
         </h3>
 
         {/* Description */}
-        <p className="text-taupe text-body mb-6 leading-relaxed">
+        <p className="text-charcoal/80 text-body mb-6 leading-relaxed">
           {course.description}
         </p>
 
@@ -107,7 +107,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
               key={index}
               className="flex items-start gap-2 text-sm text-charcoal"
             >
-              <Check className="w-5 h-5 text-bronze flex-shrink-0 mt-0.5" />
+              <Check className="w-5 h-5 text-dark-blue flex-shrink-0 mt-0.5" />
               <span>{feature}</span>
             </li>
           ))}
@@ -124,10 +124,10 @@ export const CourseCard: React.FC<CourseCardProps> = ({
         </MagneticButton>
 
         {/* Trust Signals */}
-        <div className="flex items-center justify-center gap-4 text-xs text-taupe">
+        <div className="flex items-center justify-center gap-4 text-xs text-charcoal/70">
           {course.rating && (
             <div className="flex items-center gap-1">
-              <span className="text-gold">★★★★★</span>
+              <span className="text-sky-blue">★★★★★</span>
               <span className="ml-1">{course.rating}/5</span>
             </div>
           )}

@@ -71,10 +71,10 @@ export const Navigation: React.FC<NavigationProps> = ({
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <span
-              className={cn(
-                'font-heading text-2xl font-bold transition-colors',
-                isScrolled ? 'text-espresso' : 'text-ivory'
-              )}
+            className={cn(
+              'font-heading text-2xl font-bold transition-colors',
+              isScrolled ? 'text-dark-blue' : 'text-ivory'
+            )}
             >
               Lea Matyi
             </span>
@@ -87,7 +87,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                 <Link
                   href={link.href}
                   className={cn(
-                    'text-sm font-medium tracking-wide transition-colors hover:text-bronze',
+                    'text-sm font-medium tracking-wide transition-colors hover:text-sky-blue',
                     isScrolled ? 'text-charcoal' : 'text-cream'
                   )}
                 >
@@ -114,7 +114,7 @@ export const Navigation: React.FC<NavigationProps> = ({
             className={cn(
               'md:hidden p-2 rounded-lg transition-colors',
               isScrolled
-                ? 'text-espresso hover:bg-bronze/10'
+                ? 'text-dark-blue hover:bg-sky-blue/10'
                 : 'text-ivory hover:bg-ivory/10'
             )}
             aria-label="Toggle menu"
@@ -139,7 +139,7 @@ export const Navigation: React.FC<NavigationProps> = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-espresso/95 backdrop-blur-lg"
+              className="absolute inset-0 bg-dark-blue/95 backdrop-blur-lg"
               onClick={toggleMobileMenu}
             />
 
@@ -155,7 +155,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                     <Link
                       href={link.href}
                       onClick={toggleMobileMenu}
-                      className="font-heading text-3xl text-ivory hover:text-bronze transition-colors"
+                      className="font-heading text-3xl text-ivory hover:text-sky-blue transition-colors"
                     >
                       {link.label}
                     </Link>

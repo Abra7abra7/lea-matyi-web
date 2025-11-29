@@ -14,19 +14,22 @@ import scrapedData from '@/data/scraped-data.json';
 import type { Course } from '@/components/courses/CourseCard';
 import type { GalleryImage } from '@/components/gallery/MasonryGallery';
 
+// R2 Image URLs from Cloudflare
+const R2_BASE = 'https://pub-aa7457c105694bcca680b272aeeb00ae.r2.dev/media';
+
 export default function Home() {
   // Get homepage data
   const homepage = scrapedData.pages.find(
     (page: any) => page.url === 'https://www.leamatyi.com/' || page.url === 'https://www.leamatyi.com'
   );
 
-  // Sample courses data (replace with real data later)
+  // Sample courses data s reálnymi R2 fotkami
   const sampleCourses: Course[] = [
     {
       id: '1',
       title: 'PMU Fundamentals',
       description: 'Kompletný základný kurz pre začínajúcich PMU artistov. Od prvého kontaktu s PMU zariadením až po expertné techniky.',
-      image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80',
+      image: `${R2_BASE}/065f8a77c773.jpg`,
       price: 997,
       duration: '12 týždňov',
       level: 'Beginner',
@@ -44,7 +47,7 @@ export default function Home() {
       id: '2',
       title: 'Advanced Brow Architecture',
       description: 'Pre pokročilých artistov, ktorí chcú zvládnuť architektúru obočia na profesionálnej úrovni.',
-      image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80',
+      image: `${R2_BASE}/116e8b1a5565.jpg`,
       price: 1497,
       duration: '8 týždňov',
       level: 'Advanced',
@@ -62,7 +65,7 @@ export default function Home() {
       id: '3',
       title: 'PMU Business Mastery',
       description: 'Naučte sa, ako vybudovať úspešný PMU business od základov po skalovanie.',
-      image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80',
+      image: `${R2_BASE}/0df7dc3baa58.jpg`,
       price: 797,
       duration: '6 týždňov',
       level: 'Intermediate',
@@ -78,49 +81,63 @@ export default function Home() {
     },
   ];
 
-  // Sample gallery images (replace with real data later)
+  // Gallery images s reálnymi R2 fotkami z Lea Matyi portfólia
   const galleryImages: GalleryImage[] = [
     {
       id: '1',
-      src: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80',
+      src: `${R2_BASE}/83cebde0163d.jpg`,
       alt: 'Perfect eyebrow architecture',
       title: 'Architectural Brows',
       technique: 'Microblading + Shading',
     },
     {
       id: '2',
-      src: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80',
+      src: `${R2_BASE}/790f2be651fe.jpg`,
       alt: 'Natural PMU result',
       title: 'Natural Beauty',
       technique: 'Powder Brows',
     },
     {
       id: '3',
-      src: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80',
+      src: `${R2_BASE}/0f145bc3060d.jpg`,
       alt: 'Precision work',
       title: 'Precision Work',
       technique: 'Nano Strokes',
     },
     {
       id: '4',
-      src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80',
+      src: `${R2_BASE}/b03bc25bf41f.jpg`,
       alt: 'Healed result',
       title: 'Healed Perfection',
       technique: 'Ombré Brows',
     },
     {
       id: '5',
-      src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&q=80',
+      src: `${R2_BASE}/3560deb8e8fd.jpg`,
       alt: 'Client transformation',
       title: 'Transformation',
       technique: 'Corrective PMU',
     },
     {
       id: '6',
-      src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80',
+      src: `${R2_BASE}/ffed47144538.jpg`,
       alt: 'Fresh work',
       title: 'Fresh Application',
       technique: 'Combination Brows',
+    },
+    {
+      id: '7',
+      src: `${R2_BASE}/2b050419150b.jpg`,
+      alt: 'Professional PMU work',
+      title: 'Professional Touch',
+      technique: 'Hybrid Brows',
+    },
+    {
+      id: '8',
+      src: `${R2_BASE}/db14ca6b5479.jpg`,
+      alt: 'Expert technique',
+      title: 'Expert Results',
+      technique: 'Custom Brows',
     },
   ];
 
@@ -140,7 +157,7 @@ export default function Home() {
           description="World-class PMU vzdelávanie, kde precíznosť stretáva umeleckú citlivosť. 
             Ovládnite techniky, ktorým dôverujú profesionáli po celej Európe."
           ctaText="PRESKÚMAŤ KURZY"
-          fallbackImage="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&q=80"
+          fallbackImage={`${R2_BASE}/5efc916755ab.jpg`}
           onCtaClick={() => {
             document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' });
           }}
@@ -156,10 +173,10 @@ export default function Home() {
               variants={textReveal}
               className="mx-auto max-w-3xl text-center mb-20"
             >
-              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-espresso mb-6">
+              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-dark-blue mb-6">
                 Prečo Lea Matyi?
               </h2>
-              <p className="text-taupe text-lg leading-relaxed">
+              <p className="text-charcoal/80 text-lg leading-relaxed">
                 15 rokov praxe destilované do najkvalitnejšieho PMU vzdelávania v Európe
               </p>
             </motion.div>
@@ -197,10 +214,10 @@ export default function Home() {
                 >
                   <PremiumCard className="p-8 h-full text-center">
                     <div className="text-5xl mb-4">{feature.icon}</div>
-                    <h3 className="font-heading text-xl font-semibold text-espresso mb-3">
+                    <h3 className="font-heading text-xl font-semibold text-dark-blue mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-taupe text-sm leading-relaxed">
+                    <p className="text-charcoal/80 text-sm leading-relaxed">
                       {feature.description}
                     </p>
                   </PremiumCard>
@@ -220,10 +237,10 @@ export default function Home() {
               variants={textReveal}
               className="mx-auto max-w-3xl text-center mb-20"
             >
-              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-espresso mb-6">
+              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-dark-blue mb-6">
                 Naše Kurzy
               </h2>
-              <p className="text-taupe text-lg leading-relaxed">
+              <p className="text-charcoal/80 text-lg leading-relaxed">
                 Od začiatočníkov po expertov — každý kurz je navrhnutý pre dokonalé výsledky
               </p>
             </motion.div>
@@ -242,10 +259,10 @@ export default function Home() {
               variants={textReveal}
               className="mx-auto max-w-3xl text-center mb-12"
             >
-              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-espresso mb-6">
+              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-dark-blue mb-6">
                 Portfólio Excelentnosti
               </h2>
-              <p className="text-taupe text-lg leading-relaxed">
+              <p className="text-charcoal/80 text-lg leading-relaxed">
                 Výsledky, ktoré hovoria samy za seba
               </p>
             </motion.div>
@@ -267,10 +284,10 @@ export default function Home() {
               variants={textReveal}
               className="mx-auto max-w-3xl text-center mb-20"
             >
-              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-espresso mb-6">
+              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-dark-blue mb-6">
                 Úspešné Príbehy
               </h2>
-              <p className="text-taupe text-lg leading-relaxed">
+              <p className="text-charcoal/80 text-lg leading-relaxed">
                 Tisíce umelcov transformovali svoju kariéru s našimi kurzami
               </p>
             </motion.div>
@@ -278,21 +295,21 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80',
+                  image: `${R2_BASE}/d5efa5f55dbc.jpg`,
                   quote:
                     'Kurz totálne prekročil moje očakávania. Lea ma naučila nielen techniky, ale aj umenie vidieť tvár ako architekt.',
                   name: 'Martina M.',
                   role: 'PMU Artist, Bratislava',
                 },
                 {
-                  image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
+                  image: `${R2_BASE}/a274c31be1a8.jpg`,
                   quote:
                     'Zúčastnila som sa skupinového školenia a môžem úprimne povedať, že to bolo jedno z najlepších školení v mojej kariére.',
                   name: 'Veronika Š.',
                   role: 'PMU Specialist, Praha',
                 },
                 {
-                  image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80',
+                  image: `${R2_BASE}/24c1f54a1e5b.jpg`,
                   quote:
                     'Z trasúcej sa ruky plnej obáv som sa stala sebavedomou umelkyňou. Váš kurz bol absolútnym prelomom.',
                   name: 'Daša D.',
@@ -312,17 +329,17 @@ export default function Home() {
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
-                        className="w-20 h-20 rounded-full object-cover mx-auto ring-4 ring-bronze/30"
+                        className="w-20 h-20 rounded-full object-cover mx-auto ring-4 ring-sky-blue/30"
                       />
                     </div>
                     <p className="text-charcoal italic mb-6 leading-relaxed">
                       "{testimonial.quote}"
                     </p>
                     <div className="text-center">
-                      <p className="font-heading font-semibold text-espresso text-lg">
+                      <p className="font-heading font-semibold text-dark-blue text-lg">
                         {testimonial.name}
                       </p>
-                      <p className="text-sm text-taupe">{testimonial.role}</p>
+                      <p className="text-sm text-charcoal/70">{testimonial.role}</p>
                     </div>
                   </PremiumCard>
                 </motion.div>
@@ -334,8 +351,8 @@ export default function Home() {
         {/* Final CTA Section */}
         <section className="relative py-32 overflow-hidden">
           {/* Background with overlay */}
-          <div className="absolute inset-0 bg-espresso" />
-          <div className="absolute inset-0 bg-gradient-to-br from-espresso via-espresso/95 to-bronze/20" />
+          <div className="absolute inset-0 bg-dark-blue" />
+          <div className="absolute inset-0 bg-gradient-to-br from-dark-blue via-dark-blue/95 to-sky-blue/20" />
 
           <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8 text-center">
             <motion.div
@@ -364,7 +381,7 @@ export default function Home() {
               {/* Trust Badges */}
               <div className="mt-16 flex flex-wrap justify-center gap-8 text-cream/70 text-sm">
                 <div className="flex items-center gap-2">
-                  <span className="text-gold">★★★★★</span>
+                  <span className="text-sky-blue">★★★★★</span>
                   <span>4.9/5 Rating</span>
                 </div>
                 <div>5,000+ Študentov</div>
