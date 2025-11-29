@@ -6,10 +6,9 @@ import { CinematicHero } from '@/components/hero/CinematicHero';
 import { MasonryGallery } from '@/components/gallery/MasonryGallery';
 import { CourseGrid } from '@/components/courses/CourseGrid';
 import { PremiumCard } from '@/components/ui/premium-card';
-import { MagneticButton } from '@/components/ui/magnetic-button';
-import { ParallaxImage } from '@/components/effects/ParallaxImage';
+import { Button } from '@/components/ui/button-simple';
 import { motion } from 'framer-motion';
-import { textReveal, fadeIn, revealOnScroll } from '@/lib/animations';
+import { textReveal, revealOnScroll } from '@/lib/animations';
 import scrapedData from '@/data/scraped-data.json';
 import type { Course } from '@/components/courses/CourseCard';
 import type { GalleryImage } from '@/components/gallery/MasonryGallery';
@@ -154,8 +153,6 @@ export default function Home() {
         <CinematicHero
           title="The Art of\n<span>Architectural Brows</span>"
           subtitle="Kde precíznosť stretáva umenie"
-          description="World-class PMU vzdelávanie, kde precíznosť stretáva umeleckú citlivosť. 
-            Ovládnite techniky, ktorým dôverujú profesionáli po celej Európe."
           ctaText="PRESKÚMAŤ KURZY"
           fallbackImage={`${R2_BASE}/5efc916755ab.jpg`}
           onCtaClick={() => {
@@ -163,109 +160,63 @@ export default function Home() {
           }}
         />
 
-        {/* Why Choose Lea Section */}
-        <section className="py-24 bg-cream">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={textReveal}
-              className="mx-auto max-w-3xl text-center mb-20"
-            >
-              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-espresso mb-6">
+        {/* Why Choose Lea Section - Simplified */}
+        <section className="py-16 md:py-24 bg-cream">
+          <div className="mx-auto max-w-6xl px-6 lg:px-8">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="font-heading text-3xl md:text-5xl font-bold text-espresso mb-4">
                 Prečo Lea Matyi?
               </h2>
-              <p className="text-taupe text-lg leading-relaxed">
-                15 rokov praxe destilované do najkvalitnejšieho PMU vzdelávania v Európe
+              <p className="text-taupe text-base md:text-lg max-w-2xl mx-auto">
+                15 rokov praxe v PMU vzdelávaní
               </p>
-            </motion.div>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {[
-                {
-                  icon: '✨',
-                  title: 'Živé Demo',
-                  description: 'Sledujte každý detail v real-time demo ukážkach',
-                },
-                {
-                  icon: '📚',
-                  title: 'Workbooky',
-                  description: 'Detailné príručky pre každú techniku',
-                },
-                {
-                  icon: '🎓',
-                  title: 'Certifikácia',
-                  description: 'Medzinárodne uznávaný certifikát',
-                },
-                {
-                  icon: '💬',
-                  title: 'Komunita',
-                  description: 'Prístup do exkluzívnej PMU komunity',
-                },
+                { icon: '✨', title: 'Živé Demo' },
+                { icon: '📚', title: 'Workbooky' },
+                { icon: '🎓', title: 'Certifikácia' },
+                { icon: '💬', title: 'Komunita' },
               ].map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial="offscreen"
-                  whileInView="onscreen"
-                  viewport={{ once: true, amount: 0.3 }}
-                  variants={revealOnScroll}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <PremiumCard className="p-8 h-full text-center">
-                    <div className="text-5xl mb-4">{feature.icon}</div>
-                    <h3 className="font-heading text-xl font-semibold text-espresso mb-3">
-                      {feature.title}
-                    </h3>
-                    <p className="text-taupe text-sm leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </PremiumCard>
-                </motion.div>
+                <div key={index} className="bg-white/80 backdrop-blur-sm rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                  <div className="text-4xl mb-3">{feature.icon}</div>
+                  <h3 className="font-heading text-lg font-semibold text-espresso">
+                    {feature.title}
+                  </h3>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Courses Section */}
-        <section id="courses" className="py-24 bg-ivory">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={textReveal}
-              className="mx-auto max-w-3xl text-center mb-20"
-            >
-              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-espresso mb-6">
+        {/* Courses Section - Simplified */}
+        <section id="courses" className="py-16 md:py-24 bg-ivory">
+          <div className="mx-auto max-w-6xl px-6 lg:px-8">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="font-heading text-3xl md:text-5xl font-bold text-espresso mb-4">
                 Naše Kurzy
               </h2>
-              <p className="text-taupe text-lg leading-relaxed">
-                Od začiatočníkov po expertov — každý kurz je navrhnutý pre dokonalé výsledky
+              <p className="text-taupe text-base md:text-lg max-w-2xl mx-auto">
+                Od začiatočníkov po expertov
               </p>
-            </motion.div>
+            </div>
 
             <CourseGrid courses={sampleCourses} onEnroll={handleEnroll} />
           </div>
         </section>
 
-        {/* Gallery Section */}
-        <section className="py-24 bg-cream">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={textReveal}
-              className="mx-auto max-w-3xl text-center mb-12"
-            >
-              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-espresso mb-6">
-                Portfólio Excelentnosti
+        {/* Gallery Section - Simplified */}
+        <section className="py-16 md:py-24 bg-cream">
+          <div className="mx-auto max-w-6xl px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="font-heading text-3xl md:text-5xl font-bold text-espresso mb-4">
+                Naše Portfólio
               </h2>
-              <p className="text-taupe text-lg leading-relaxed">
+              <p className="text-taupe text-base md:text-lg">
                 Výsledky, ktoré hovoria samy za seba
               </p>
-            </motion.div>
+            </div>
 
             <MasonryGallery
               images={galleryImages}
@@ -274,121 +225,90 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <section className="py-24 bg-soft-pink/30">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={textReveal}
-              className="mx-auto max-w-3xl text-center mb-20"
-            >
-              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-espresso mb-6">
+        {/* Testimonials Section - Simplified */}
+        <section className="py-16 md:py-24 bg-soft-pink/30">
+          <div className="mx-auto max-w-6xl px-6 lg:px-8">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="font-heading text-3xl md:text-5xl font-bold text-espresso mb-4">
                 Úspešné Príbehy
               </h2>
-              <p className="text-taupe text-lg leading-relaxed">
-                Tisíce umelcov transformovali svoju kariéru s našimi kurzami
+              <p className="text-taupe text-base md:text-lg max-w-2xl mx-auto">
+                Naši študenti dosahujú neuveriteľné výsledky
               </p>
-            </motion.div>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               {[
                 {
                   image: `${R2_BASE}/d5efa5f55dbc.jpg`,
-                  quote:
-                    'Kurz totálne prekročil moje očakávania. Lea ma naučila nielen techniky, ale aj umenie vidieť tvár ako architekt.',
+                  quote: 'Kurz totálne prekročil moje očakávania.',
                   name: 'Martina M.',
-                  role: 'PMU Artist, Bratislava',
+                  role: 'PMU Artist',
                 },
                 {
                   image: `${R2_BASE}/a274c31be1a8.jpg`,
-                  quote:
-                    'Zúčastnila som sa skupinového školenia a môžem úprimne povedať, že to bolo jedno z najlepších školení v mojej kariére.',
+                  quote: 'Jedno z najlepších školení v mojej kariére.',
                   name: 'Veronika Š.',
-                  role: 'PMU Specialist, Praha',
+                  role: 'PMU Specialist',
                 },
                 {
                   image: `${R2_BASE}/24c1f54a1e5b.jpg`,
-                  quote:
-                    'Z trasúcej sa ruky plnej obáv som sa stala sebavedomou umelkyňou. Váš kurz bol absolútnym prelomom.',
+                  quote: 'Váš kurz bol absolútnym prelomom.',
                   name: 'Daša D.',
-                  role: 'Certified PMU Artist',
+                  role: 'PMU Artist',
                 },
               ].map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  initial="offscreen"
-                  whileInView="onscreen"
-                  viewport={{ once: true, amount: 0.3 }}
-                  variants={revealOnScroll}
-                  transition={{ delay: index * 0.15 }}
-                >
-                  <PremiumCard className="p-8 h-full">
-                    <div className="mb-6">
-                      <img
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        className="w-20 h-20 rounded-full object-cover mx-auto ring-4 ring-bronze/30"
-                      />
-                    </div>
-                    <p className="text-charcoal italic mb-6 leading-relaxed">
-                      "{testimonial.quote}"
+                <div key={index} className="bg-white/80 backdrop-blur-sm rounded-xl p-6 hover:shadow-lg transition-shadow">
+                  <div className="mb-4">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover mx-auto ring-2 ring-bronze/30"
+                    />
+                  </div>
+                  <p className="text-charcoal text-sm italic mb-4">
+                    "{testimonial.quote}"
+                  </p>
+                  <div className="text-center">
+                    <p className="font-heading font-semibold text-espresso">
+                      {testimonial.name}
                     </p>
-                    <div className="text-center">
-                      <p className="font-heading font-semibold text-espresso text-lg">
-                        {testimonial.name}
-                      </p>
-                      <p className="text-sm text-taupe">{testimonial.role}</p>
-                    </div>
-                  </PremiumCard>
-                </motion.div>
+                    <p className="text-xs text-taupe">{testimonial.role}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Final CTA Section */}
-        <section className="relative py-32 overflow-hidden">
-          {/* Background with overlay */}
+        {/* Final CTA Section - Simplified */}
+        <section className="relative py-20 md:py-32 overflow-hidden">
           <div className="absolute inset-0 bg-espresso" />
           <div className="absolute inset-0 bg-gradient-to-br from-espresso via-espresso/95 to-bronze/20" />
 
-          <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8 text-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeIn}
-            >
-              <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold text-ivory mb-6">
-                Pripravení začať svoju cestu?
-              </h2>
-              <p className="text-cream/90 text-xl mb-12 leading-relaxed max-w-2xl mx-auto">
-                Pridajte sa k 5,000+ PMU profesionálom, ktorí transformovali svoju kariéru 
-                s našim world-class vzdelávaním.
-              </p>
+          <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-ivory mb-6">
+              Pripravení začať svoju cestu?
+            </h2>
+            <p className="text-cream/90 text-base md:text-lg mb-8 md:mb-12 max-w-2xl mx-auto">
+              Pridajte sa k 5,000+ PMU profesionálom
+            </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <MagneticButton variant="primary" size="lg" className="shadow-2xl">
-                  PRESKÚMAŤ VŠETKY KURZY
-                </MagneticButton>
-                <MagneticButton variant="ghost" size="lg">
-                  SLEDOVAŤ FREE PREVIEW
-                </MagneticButton>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+              <Button variant="primary" size="lg">
+                PRESKÚMAŤ KURZY
+              </Button>
+            </div>
 
-              {/* Trust Badges */}
-              <div className="mt-16 flex flex-wrap justify-center gap-8 text-cream/70 text-sm">
-                <div className="flex items-center gap-2">
-                  <span className="text-gold">★★★★★</span>
-                  <span>4.9/5 Rating</span>
-                </div>
-                <div>5,000+ Študentov</div>
-                <div>Certifikované Programy</div>
-                <div>Lifetime Access</div>
+            {/* Trust Badges */}
+            <div className="flex flex-wrap justify-center gap-6 text-cream/70 text-sm">
+              <div className="flex items-center gap-2">
+                <span className="text-gold">★★★★★</span>
+                <span>4.9/5</span>
               </div>
-            </motion.div>
+              <div>5,000+ Študentov</div>
+              <div>Certifikované</div>
+            </div>
           </div>
         </section>
       </main>

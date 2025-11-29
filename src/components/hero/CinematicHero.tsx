@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MagneticButton } from '@/components/ui/magnetic-button';
-import { textReveal, fadeIn, scrollIndicatorBounce } from '@/lib/animations';
+import { Button } from '@/components/ui/button-simple';
 import { cn } from '@/lib/utils';
 
 export interface CinematicHeroProps {
@@ -43,8 +42,9 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
   return (
     <section
       className={cn(
-        'relative h-screen w-full overflow-hidden',
+        'relative min-h-[80vh] md:min-h-screen w-full overflow-hidden',
         'flex items-center justify-center',
+        'py-20 md:py-0',
         className
       )}
     >
@@ -56,31 +56,31 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
             muted
             loop
             playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
+            className="absolute inset-0 w-full h-full object-cover opacity-50"
             poster={fallbackImage}
           >
             <source src={videoSrc} type="video/mp4" />
           </video>
         ) : fallbackImage ? (
           <div
-            className="absolute inset-0 w-full h-full bg-cover bg-center opacity-70"
+            className="absolute inset-0 w-full h-full bg-cover bg-center opacity-60"
             style={{ backgroundImage: `url(${fallbackImage})` }}
           />
         ) : null}
       </div>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-espresso/80 via-espresso/40 to-transparent" />
+      {/* Gradient Overlay - Lighter */}
+      <div className="absolute inset-0 bg-gradient-to-b from-espresso/70 via-espresso/30 to-espresso/50" />
 
-      {/* Content */}
-      <div className="relative z-10 flex h-full items-center justify-center text-center px-6">
-        <div className="max-w-5xl">
-          {/* Title */}
+      {/* Content - Simplified */}
+      <div className="relative z-10 flex items-center justify-center text-center px-6 max-w-4xl mx-auto">
+        <div className="space-y-6 md:space-y-8">
+          {/* Title - Smaller, cleaner */}
           <motion.h1
-            variants={textReveal}
-            initial="hidden"
-            animate="visible"
-            className="font-heading text-[clamp(3rem,8vw,6rem)] font-bold text-ivory leading-none mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-ivory leading-tight"
           >
             {title.split('\n').map((line, i) => (
               <React.Fragment key={i}>
@@ -99,69 +99,36 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
             ))}
           </motion.h1>
 
-          {/* Subtitle */}
+          {/* Subtitle - Only if exists */}
           {subtitle && (
             <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-[clamp(1.25rem,2.5vw,1.75rem)] font-heading text-bronze mb-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-xl md:text-2xl font-medium text-bronze"
             >
               {subtitle}
             </motion.p>
           )}
 
-          {/* Description */}
-          {description && (
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-[clamp(1rem,2vw,1.25rem)] text-cream/90 max-w-2xl mx-auto mb-12 leading-relaxed"
-            >
-              {description}
-            </motion.p>
-          )}
-
-          {/* CTA Button */}
+          {/* CTA Button - Simpler */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="pt-4"
           >
-            <MagneticButton
+            <Button
               variant="primary"
               size="lg"
               onClick={onCtaClick}
-              className="shadow-2xl hover:shadow-bronze/50"
+              className="shadow-xl"
             >
               {ctaText}
-            </MagneticButton>
+            </Button>
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        {...scrollIndicatorBounce}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20"
-      >
-        <div className="w-6 h-10 border-2 border-cream/30 rounded-full flex justify-center pt-2">
-          <motion.div
-            animate={{
-              y: [0, 8, 0],
-              opacity: [1, 0.3, 1],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-            className="w-1 h-3 bg-bronze rounded-full"
-          />
-        </div>
-        <p className="text-cream/50 text-xs mt-3 tracking-widest">SCROLL</p>
-      </motion.div>
     </section>
   );
 };
