@@ -60,13 +60,23 @@ export function ImageOptimized({ image, priority = false, className = '' }: Imag
   }
 
   return (
-    <div className={`relative w-full overflow-hidden rounded-lg ${className}`}>
-      <img
-        src={imageUrl}
-        alt={image.alt || 'Image'}
-        className="w-full h-auto object-cover"
-        loading={priority ? 'eager' : 'lazy'}
-      />
+    <div className={`group relative w-full overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ${className}`}>
+      <div className="relative overflow-hidden">
+        <img
+          src={imageUrl}
+          alt={image.alt || 'Image'}
+          className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-500"
+          loading={priority ? 'eager' : 'lazy'}
+        />
+        {/* Overlay s jemným gradientom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#abdbe3]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
+      {/* Alt text pri hoveri */}
+      {image.alt && (
+        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          {image.alt}
+        </div>
+      )}
     </div>
   );
 }

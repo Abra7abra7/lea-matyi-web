@@ -15,7 +15,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#A8D5E2] shadow-sm sticky top-0 z-50">
+    <header className="bg-[#abdbe3] shadow-md sticky top-0 z-50 backdrop-blur-sm bg-[#abdbe3]/95">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
@@ -49,7 +49,7 @@ export function Header() {
         </div>
         
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Button className="bg-[#2C5F7F] text-white hover:bg-[#1f4456] rounded-full">
+          <Button className="bg-[#2C5F7F] text-white hover:bg-[#1f4456] rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300">
             Prihlásiť
           </Button>
         </div>

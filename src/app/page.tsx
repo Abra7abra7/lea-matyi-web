@@ -17,10 +17,15 @@ export default function Home() {
   const mainHeading = headings.find((h: any) => h.level === 1);
   const subHeadings = headings.filter((h: any) => h.level === 3).slice(0, 4);
 
+  // Get hero image
+  const heroImage = homepage?.images?.find((img: any) => 
+    img.src.includes('IMG_8310.JPG') || img.src.includes('kajabi-cdn.com')
+  );
+
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#A8D5E2]">
+      <main className="min-h-screen bg-[#abdbe3]">
         {/* Modern Hero Section */}
         <section className="relative py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -51,7 +56,7 @@ export default function Home() {
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Button size="lg" className="bg-[#2C5F7F] text-white hover:bg-[#1f4456] text-lg px-8 py-6 rounded-full shadow-lg">
+                  <Button size="lg" className="bg-[#2C5F7F] text-white hover:bg-[#1f4456] text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                     ZAČAŤ HNEĎ
                   </Button>
                 </div>
@@ -59,11 +64,21 @@ export default function Home() {
               
               {/* Right Side - Image */}
               <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white">
-                  <div className="aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                    <p className="text-gray-400 text-sm">Hero Image Placeholder</p>
-                  </div>
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white group">
+                  {heroImage ? (
+                    <img 
+                      src={heroImage.src}
+                      alt="Lea Matyi PMU Training"
+                      className="aspect-[3/4] w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="aspect-[3/4] bg-gradient-to-br from-[#abdbe3] to-[#2C5F7F] flex items-center justify-center">
+                      <p className="text-white text-lg font-semibold">PMU Training</p>
+                    </div>
+                  )}
                 </div>
+                {/* Dekoratívny element */}
+                <div className="absolute -z-10 -right-4 -bottom-4 w-full h-full rounded-2xl bg-[#2C5F7F]/20"></div>
               </div>
             </div>
           </div>
@@ -80,7 +95,7 @@ export default function Home() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {subHeadings.map((heading: any, index: number) => (
-                <Card key={index} className="p-8 hover:shadow-xl transition-all border-2 border-[#D4E9F2] hover:border-[#2C5F7F] bg-white">
+                <Card key={index} className="p-8 hover:shadow-xl transition-all duration-300 border-2 border-[#abdbe3] hover:border-[#2C5F7F] bg-white transform hover:-translate-y-2">
                   <h3 className="text-xl font-heading font-bold text-[#2C5F7F]">
                     {heading.text}
                   </h3>

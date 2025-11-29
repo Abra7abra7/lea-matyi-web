@@ -68,7 +68,7 @@ export default async function Page({ params }: PageProps) {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative bg-[#A8D5E2] text-[#2C5F7F] py-16 md:py-24">
+        <section className="relative bg-[#abdbe3] text-[#2C5F7F] py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-4xl">
               <h1 className="text-4xl md:text-6xl font-heading font-bold mb-4">
@@ -104,14 +104,17 @@ export default async function Page({ params }: PageProps) {
 
             {/* Images Gallery */}
             {page.images && page.images.length > 0 && (
-              <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {page.images.slice(0, 6).map((image: any, index: number) => (
-                  <ImageOptimized
-                    key={index}
-                    image={image}
-                    className="aspect-video"
-                  />
-                ))}
+              <div className="mt-12">
+                <h2 className="text-3xl font-heading font-bold text-[#2C5F7F] mb-8">Galéria</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {page.images.slice(0, 8).map((image: any, index: number) => (
+                    <ImageOptimized
+                      key={index}
+                      image={image}
+                      className="aspect-[4/3]"
+                    />
+                  ))}
+                </div>
               </div>
             )}
           </div>
