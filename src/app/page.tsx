@@ -23,13 +23,13 @@ export default function Home() {
     (page: any) => page.url === 'https://www.leamatyi.com/' || page.url === 'https://www.leamatyi.com'
   );
 
-  // Sample courses data s reálnymi R2 fotkami
+  // Sample courses data s reálnymi R2 fotkami (overené validné JPG)
   const sampleCourses: Course[] = [
     {
       id: '1',
       title: 'PMU Fundamentals',
       description: 'Kompletný základný kurz pre začínajúcich PMU artistov. Od prvého kontaktu s PMU zariadením až po expertné techniky.',
-      image: `${R2_BASE}/065f8a77c773.jpg`,
+      image: `${R2_BASE}/5efc916755ab.jpg`,
       price: 997,
       duration: '12 týždňov',
       level: 'Beginner',
@@ -47,7 +47,7 @@ export default function Home() {
       id: '2',
       title: 'Advanced Brow Architecture',
       description: 'Pre pokročilých artistov, ktorí chcú zvládnuť architektúru obočia na profesionálnej úrovni.',
-      image: `${R2_BASE}/116e8b1a5565.jpg`,
+      image: `${R2_BASE}/0f145bc3060d.jpg`,
       price: 1497,
       duration: '8 týždňov',
       level: 'Advanced',
@@ -65,7 +65,7 @@ export default function Home() {
       id: '3',
       title: 'PMU Business Mastery',
       description: 'Naučte sa, ako vybudovať úspešný PMU business od základov po skalovanie.',
-      image: `${R2_BASE}/0df7dc3baa58.jpg`,
+      image: `${R2_BASE}/9dad40260948.jpg`,
       price: 797,
       duration: '6 týždňov',
       level: 'Intermediate',
