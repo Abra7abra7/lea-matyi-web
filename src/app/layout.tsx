@@ -1,18 +1,25 @@
 import type { Metadata } from "next";
-import { Montserrat, Raleway } from "next/font/google";
+import { Fraunces } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+// Luxury Serif for headings
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const raleway = Raleway({
-  variable: "--font-raleway",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
+// Geist Sans is already available via next/font
+// Using GeistSans from geist/font/sans package
+// If not available, we'll use Inter as fallback:
+// import { Inter } from "next/font/google";
+// const geist = Inter({
+//   variable: "--font-geist",
+//   subsets: ["latin"],
+//   weight: ["400", "500", "600"],
+// });
 
 export const metadata: Metadata = {
   title: "Lea Matyi - PMU Trainings & Courses",
@@ -25,9 +32,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="sk" className="scroll-smooth">
       <body
-        className={`${montserrat.variable} ${raleway.variable} font-sans antialiased`}
+        className={`${GeistSans.variable} ${fraunces.variable} font-sans antialiased`}
       >
         {children}
       </body>
