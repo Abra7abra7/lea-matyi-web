@@ -284,7 +284,7 @@ export const parallaxConfig = {
   scrollYProgress: [0, 1],
   y: ['-20%', '20%'],
   transition: {
-    ease: 'linear',
+    ease: [0, 0, 1, 1] as const, // linear
   },
 };
 
@@ -439,7 +439,7 @@ export const shimmerEffect = {
     x: ['0%', '200%'],
     transition: {
       duration: 1.5,
-      ease: 'easeInOut',
+      ease: easings.easeInOut,
       repeat: Infinity,
       repeatDelay: 1,
     },
@@ -453,7 +453,7 @@ export const pulseEffect: Variants = {
     transition: {
       duration: 2,
       repeat: Infinity,
-      ease: 'easeInOut',
+      ease: easings.easeInOut,
     },
   },
 };
@@ -468,7 +468,7 @@ export const scrollIndicatorBounce = {
     transition: {
       duration: 1.5,
       repeat: Infinity,
-      ease: 'easeInOut',
+      ease: easings.easeInOut,
     },
   },
 };

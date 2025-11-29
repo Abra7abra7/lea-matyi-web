@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 import { cardHover, shimmerEffect } from '@/lib/animations';
 import { cn } from '@/lib/utils';
 
-export interface PremiumCardProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface PremiumCardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 
+  'onDrag' | 'onDragStart' | 'onDragEnd' | 'onAnimationStart' | 'onAnimationEnd'> {
   children: React.ReactNode;
   enableShimmer?: boolean;
   enableHover?: boolean;
@@ -66,7 +67,7 @@ export const PremiumCard = React.forwardRef<HTMLDivElement, PremiumCardProps>(
                 x: '200%',
                 transition: {
                   duration: 1.5,
-                  ease: 'easeInOut',
+                  ease: [0.4, 0, 0.2, 1], // easeInOut
                 },
               },
             }}

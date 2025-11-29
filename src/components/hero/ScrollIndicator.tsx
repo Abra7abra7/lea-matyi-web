@@ -28,7 +28,7 @@ export const ScrollIndicator: React.FC<ScrollIndicatorProps> = ({ className }) =
           transition={{
             duration: 1.5,
             repeat: Infinity,
-            ease: 'easeInOut',
+            ease: [0.4, 0, 0.2, 1], // easeInOut
           }}
           className="w-1 h-3 bg-bronze rounded-full"
         />
